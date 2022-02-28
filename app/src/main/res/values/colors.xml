@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#0066CC</color>
+    <color name="grey">#666666</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--应用的主体颜色-->
+    <color name="colorPrimary">@color/blue</color>
+
+    <color name="colorPrimaryVariant">@color/white</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/blue</color>
+    <color name="colorSecondaryVariant">@color/black</color>
+    <color name="colorOnSecondary">@color/white</color>
+    <color name="colorAccent">@color/blue</color>
+
+
+    <color name="rippleColor">#D0D1D3</color>
+
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#ECECEC</color>
+
+    <!--窗口Window的背景颜色-->
+    <color name="windowBackground">@color/white</color>
+
+    <!--主要的文字颜色-->
+    <color name="textColorPrimary">@color/black</color>
+    <!--次要-->
+    <color name="textColorSecondary">@color/black</color>
+
+
+</resources>

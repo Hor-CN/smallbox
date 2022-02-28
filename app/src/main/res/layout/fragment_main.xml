@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/home_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toTopOf="@+id/home_nav"
+        android:background="@color/colorLine" />
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/home_nav"
+        android:background="?android:attr/windowBackground"
+        app:abb_textStyle="bold"
+        app:abb_tabs="@menu/bottom_nav_menu"
+        app:abb_selectedTabType="text"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorLocation="bottom"
+        app:abb_indicatorMargin="10dp"
+        app:abb_indicatorHeight="5dp"
+        app:abb_selectedIndex="0"
+        app:abb_animationDuration="300"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+//这里是gradle脚本执行所需依赖，分别是对应的maven库和插件
+buildscript {
+
+    // 引入依赖版本管理文件
+    apply from: rootProject.file("versions.gradle")
+
+    repositories {
+        google() // 从Android Studio3.0后新增了google()配置，可以引用google上的开源项目
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath plugin.android_gradle_plugin // 构建工具
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10" // kotlin
+        classpath plugin.safeargs_gradle_plugin // 导航
+
+    }
+}
+
+
+
+
+// 运行gradle clean时，执行此处定义的task任务。
+// 该任务继承自Delete，删除根目录中的build目录。
+// 相当于执行Delete.delete(rootProject.buildDir)。
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">匣子APP</string>
+    <string name="title_home">首页</string>
+    <string name="title_expand">拓展</string>
+    <string name="title_find">发现</string>
+    <string name="title_me">我的</string>
+    <string name="hello_blank_fragment">未开发</string>
+    <string name="empty_msg">这里什么都没有!</string>
+    <string name="retry">重试</string>
+    <string name="no_applet">您还没有小程序呢，快去下载吧</string>
+    <string name="default_applet_tip">我还没有描述呢！</string>
+
+    <string name="run">运行</string>
+    <string name="not_login">您还没有登录呢</string>
+    <string name="login">马上登录</string>
+    <string name="register">注册</string>
+
+    <string name="default_user_name">无名氏</string>
+    <string name="default_introduce">您还没有个性签名！</string>
+
+
+
+    <string name="cancel">取消</string>
+    <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="otherLogin">其他登录方式</string>
+    <string name="tip">提示</string>
+    <string name="empty_edit">账号和密码不能为空！</string>
+    <string name="search">搜索</string>
+    <string name="create">创建</string>
+    <string name="input_search_content">请输入搜索的内容</string>
+    <string name="popular_search">热门搜索</string>
+    <string name="search_history">搜索历史</string>
+    <string name="history_delete">确认删除所有搜索历史</string>
+    <string name="complete">完成</string>
+    <string name="delete">删除</string>
+    <string name="delete_all">删除全部</string>
+    <string name="go">Go!</string>
+    <string name="UnknownHostException">当前无网络，请检查你的网络设置</string>
+    <string name="TimeoutException">连接超时,请稍后再试</string>
+    <string name="ConnectException">网络不给力，请稍候重试！</string>
+    <string name="HttpStatusCodeException">Http状态码异常</string>
+    <string name="JsonSyntaxException">数据解析失败,请检查数据是否正确</string>
+    <string name="error_msg">哦豁，发生了错误！</string>
+    <string name="open">打开</string>
+</resources>

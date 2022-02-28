@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/blue"
+        android:fitsSystemWindows="false">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleGravity="center|bottom"
+            app:expandedTitleMarginBottom="50dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"
+                app:title="小霸王游戏机" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/info_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_default_applet"
+                app:shapeAppearance="@style/circleStyle"
+
+                />
+
+
+            <TextView
+                android:id="@+id/info_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="20dp"
+                android:text="v1.0"
+                android:textSize="14sp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/info_nv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/mShadowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            app:hl_cornerRadius_leftTop="10dp"
+            app:hl_cornerRadius_rightTop="10dp"
+            app:hl_shadowHidden="true"
+            app:hl_shadowHiddenBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/info_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/item_rv_menu" />
+
+                <TextView
+                    android:id="@+id/info_tzxx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/info_rv"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="拓展信息" />
+
+                <RelativeLayout
+                    android:id="@+id/info_jj"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/info_tzxx"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textSize="16sp">
+
+                    <ImageView
+                        android:id="@+id/info_jj_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_introduce" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toStartOf="@id/info_jj_right"
+                        android:layout_toEndOf="@id/info_jj_iv"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="简介"
+                            android:textColor="@color/black75"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxEms="20"
+                            android:maxLines="1"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/info_jj_right"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_right" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/info_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/info_jj"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:id="@+id/info_author_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_author" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toStartOf="@id/info_author_right"
+                        android:layout_toEndOf="@id/info_author_iv"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="作者"
+                            android:textColor="@color/black75"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_author_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxEms="20"
+                            android:maxLines="1"
+                            android:text="Hor"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/info_author_right"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_right" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </com.lihang.ShadowLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="30dp"-->
+    <!--        android:contentDescription="@string/run"-->
+    <!--        android:src="@drawable/ic_run"-->
+    <!--        app:fabSize="auto"-->
+    <!--        app:layout_anchor="@id/app_bar_layout"-->
+    <!--        app:layout_anchorGravity="bottom|end" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

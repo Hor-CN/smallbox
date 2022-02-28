@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/fragment_search_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fragment_search_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/activity_search_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="5"
+            android:background="@drawable/shape_search_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:src="@drawable/ic_search" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment_search_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@null"
+                android:hint="@string/input_search_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_search_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/search"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:paddingStart="10sp"
+        android:text="@string/popular_search"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        tools:ignore="RtlSymmetry" />
+
+    <cn.itbk.smallbox.Views.StackLabel.StackLabel
+        android:id="@+id/fragment_search_popular_LabelView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:textColor="#e6000000"
+        app:itemMargin="4dp"
+        app:paddingHorizontal="12dp"
+        app:paddingVertical="8dp"
+        app:deleteButton="false"
+        app:textSize="12sp"
+        app:labels="小霸王游戏机,Hor,每日一文,人生重开模拟器"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/search_history"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="RelativeOverlap" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fragment_search_delete"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_delete" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fragment_search_delete_flex"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            app:alignItems="center"
+            app:alignContent="stretch"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/fragment_search_delete_flex_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_all" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:background="@color/black50" />
+
+            <TextView
+                android:id="@+id/fragment_search_delete_flex_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/complete"/>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </RelativeLayout>
+
+
+    <cn.itbk.smallbox.Views.StackLabel.StackLabel
+        android:id="@+id/fragment_search_history_LabelView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:textColor="#e6000000"
+        app:itemMargin="4dp"
+        app:paddingHorizontal="12dp"
+        app:paddingVertical="8dp"
+        app:deleteButton="false"
+        app:textSize="12sp"
+        app:labels="人生重开模拟器,每日一文"
+        />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

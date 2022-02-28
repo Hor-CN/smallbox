@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="applet_tab_arr">
+        <item>介绍</item>
+        <item>评论</item>
+        <item>推荐</item>
+    </string-array>
+
+</resources>

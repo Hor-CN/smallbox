@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fragment_applet_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DFDFE0"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false"
+            app:toolbarId="@id/fragment_applet_toolbar">
+
+            <RelativeLayout
+                android:id="@+id/fragment_applet_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/fragment_applet_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:shapeAppearance="@style/roundedCornerStyle" />
+
+                <TextView
+                    android:id="@+id/fragment_applet_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/fragment_applet_iv"
+                    android:layout_toEndOf="@+id/fragment_applet_iv"
+                    android:text="拓展名称"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/fragment_applet_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_applet_name"
+                    android:layout_alignStart="@+id/fragment_applet_name"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="免费" />
+
+                <TextView
+                    android:id="@+id/fragment_applet_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_applet_price"
+                    android:layout_alignStart="@+id/fragment_applet_price"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="人工复检 · Hor" />
+
+
+                <Button
+                    android:id="@+id/fragment_applet_open"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:text="打开" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/fragment_applet_iv"
+                    android:background="@drawable/shape_corner_up"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    app:flexWrap="nowrap"
+                    app:justifyContent="space_around">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/fragment_applet_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/dp_5"
+                            android:text="3.5"
+                            android:visibility="gone"
+                            android:textSize="18sp" />
+
+                        <RatingBar
+                            android:id="@+id/fragment_applet_ratingBar"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/fragment_applet_rating"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="暂无评分"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="&lt;1万"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="次打开"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorLine" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/fragment_applet_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                tools:ignore="MissingConstraints" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/fragment_applet_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="center"
+            app:tabIndicatorFullWidth="true"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@style/appletTabStyle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/fragment_applet_vp2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <!--    <com.google.android.flexbox.FlexboxLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:flexWrap="wrap"-->
+    <!--        app:alignItems="stretch"-->
+    <!--        app:alignContent="stretch"-->
+    <!--        >-->
+
+
+    <!--    </com.google.android.flexbox.FlexboxLayout>-->
+

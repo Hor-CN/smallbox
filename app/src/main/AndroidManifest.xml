@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.itbk.smallbox">
+
+    <!-- 网络访问权限  -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许应用程序访问有关网络的信息状态。 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许应用程序更改 Wi-Fi 连接状态。 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 允许应用程序访问有关 Wi-Fi 网络的信息。 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 允许应用程序发现和配对蓝牙设备。 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 允许应用程序连接到配对的蓝牙设备。 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <!-- 允许应用访问大致位置。 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 允许应用访问精确位置。 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 允许使用手电筒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- 允许使用振动器 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 相机权限 - 您的应用程序必须请求使用设备相机的权限。-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 允许使用相机功能 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <!-- 应用使用设备相机支持的自动对焦功能。 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 允许应用程序录制音频。 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 允许应用程序修改全局音频设置。 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- 允许对电话状态进行只读访问，包括当前手机网络信息、任何正在进行的呼叫的状态以及在设备上注册的任何 s 的列表。 危险-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许应用程序读取用户的联系人数据。 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 允许访问帐户服务中的帐户列表。 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 允许应用程序发送短信。 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 允许应用程序写入短信  Android4.4以后就移除掉了-->
+    <!-- <uses-permission android:name="android.permission.WRITE_SMS" /> -->
+    <!-- 允许应用程序阅读短信 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- 用户唤醒 接收当前用户 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许应用程序在系统完成引导后接收广播。 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 允许应用程序读取低级系统日志文件。 -->
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 允许挂载和卸载可移动存储的文件系统。不适合第三方应用程序使用 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 允许应用程序读取或写入系统设置。 此类权限仅授予系统级应用-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <!-- 允许应用程序从外部存储读取。 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 从 Android 4.4（API 级别 19）开始， 访问公共存储时需要动态申请
+    应用在外部存储空间写入其特定目录（getExternalFilesDir() 提供的目录）时
+    不再需要请求 WRITE_EXTERNAL_STORAGE 权限
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+
+    <!-- 根据taskId 调整 activity 到前台 （配合使用）-->
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <application
+        android:name=".APP.SmallBoxAPP"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:extractNativeLibs="true"
+        android:theme="@style/Theme.匣子APP"
+        tools:ignore="AllowBackup"
+        tools:replace="android:extractNativeLibs">
+
+        <activity
+            android:name=".Module.Main.MainActivity"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data android:name="ScopedStorage" android:value="true" />
+        <provider
+            android:name="io.dcloud.common.util.DCloud_FileProvider"
+            android:authorities="cn.itbk.smallbox.dc.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/dcloud_file_provider" />
+        </provider>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,125 @@
+/**
+ * @简介 依赖包版本管理
+ * @作者 Hor
+ * @版本: 1.0
+ * @创建日期 2021-08-25
+ */
+
+// 定义一个ext存放属性值
+ext {
+
+    // 项目配置属性版本
+    versions = [
+            minSdk: 23, // 最小SDK版本
+            targetSdk: 31, // 决定应用在设备上以哪个sdk版本表现。
+            compileSdk: 31 // 编译时的sdk版本
+    ]
+
+
+    // Plugins
+    agp_version = '7.0.0' // 构建工具版本
+    kotlin_version = '1.5.20'
+
+    // AAC
+    lifecycle_version = '2.4.0'
+    navigation_version = '2.3.5'
+
+
+    // Core
+    kotlin_version = '1.5.30'
+    core_version = '1.6.0-alpha03'
+    activity_version = '1.3.0-alpha07'
+    fragment_version = '1.3.3'
+
+
+    // Coroutines
+    coroutines_version = '1.5.0'
+
+
+
+    // UI
+    appcompat_version = '1.2.0'
+    material_version = '1.5.0'
+    constraintlayout_version = '2.0.4'
+    recyclerview_selection_version = '1.1.0'
+    recyclerview_version = '1.2.0'
+    animatedbottombar_version = '1.1.0'
+    legacy_version = '1.0.0'
+    UltimateBarX_version = '0.8.0'
+    SmartRefreshLayout_version = '2.0.5'
+    lottie_version = '4.1.0'
+    MultiStatePage_version = '2.0.2' // 多状态布局
+    ShadowLayout_version = '3.2.2' // 阴影
+    BaseRecyclerViewAdapterHelper_version = '3.0.7'
+    AgentWeb_version = '4.1.9'
+    flexbox_version = '3.0.0'
+
+    //util
+    glide_version = '4.11.0'
+
+    // Tests
+    junit_version = '4.13.2'
+    junit_ext_version = '1.1.2'
+    espresso_core_version = '3.3.0'
+
+    plugin = [
+            android_gradle_plugin: "com.android.tools.build:gradle:$agp_version",
+            kotlin_gradle_plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+            safeargs_gradle_plugin: "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+    ]
+
+
+    library = [
+
+            // Core
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            core: "androidx.core:core-ktx:$core_version",
+            activity: "androidx.activity:activity-ktx:$activity_version",
+            fragment: "androidx.fragment:fragment-ktx:$fragment_version",
+
+            // UI
+            appcompat: "androidx.appcompat:appcompat:$appcompat_version",
+            material: "com.google.android.material:material:$material_version",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+            recyclerview_selection: "androidx.recyclerview:recyclerview-selection:$recyclerview_selection_version",
+            recyclerview: "androidx.recyclerview:recyclerview:$recyclerview_version",
+            animatedbottombar: "nl.joery.animatedbottombar:library:$animatedbottombar_version",
+            legacy: "androidx.legacy:legacy-support-v4:$legacy_version",
+            UltimateBarX: "com.gitee.zackratos:UltimateBarX:$UltimateBarX_version",
+            SmartRefreshLayout_layout: "com.scwang.smart:refresh-layout-kernel:$SmartRefreshLayout_version",     //核心必须依赖
+            SmartRefreshLayout_classics_header: "com.scwang.smart:refresh-header-classics:$SmartRefreshLayout_version",    //经典刷新头
+            SmartRefreshLayout_classics_footer: "com.scwang.smart:refresh-footer-classics:$SmartRefreshLayout_version",   //经典加载
+            lottie:"com.airbnb.android:lottie:$lottie_version",
+            MultiStatePage: "com.github.Zhao-Yan-Yan:MultiStatePage:$MultiStatePage_version",
+            ShadowLayout: "com.github.lihangleo2:ShadowLayout:$ShadowLayout_version",
+            BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:$BaseRecyclerViewAdapterHelper_version",
+            flexbox: "com.google.android.flexbox:flexbox:$flexbox_version",
+            // 浏览器
+            AgentWeb: "com.github.Justson.AgentWeb:agentweb-core:$AgentWeb_version",
+
+            // Coroutines
+            coroutines_core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+
+            //AAC
+            livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            viewmodel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            runtime: "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            navigation_ui: "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigation_fragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+
+            //util
+
+            glide: "com.github.bumptech.glide:glide:$glide_version",//图片加载
+
+    ]
+
+
+    androidTestLibrary = [
+            junit: "junit:junit:$junit_version",
+            junit_ext: "androidx.test.ext:junit:$junit_ext_version",
+            espresso_core: "androidx.test.espresso:espresso-core:$espresso_core_version"
+    ]
+
+
+}

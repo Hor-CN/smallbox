@@ -1,0 +1,151 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+//必须配置
+def mfph = [
+        //包名
+        "apk.applicationId": "cn.itbk.smallbox",
+]
+
+// 配置项目构建的各种属性
+android {
+    compileSdk versions.compileSdk
+    defaultConfig {
+        applicationId "cn.itbk.smallbox"
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+        versionCode 3
+        versionName "1.0.3"
+        manifestPlaceholders = mfph
+        ndk {
+            abiFilters 'x86', "armeabi-v7a"
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    //此处配置必须添加 否则无法正确运行
+    aaptOptions {
+        additionalParameters '--auto-add-overlay'
+        //noCompress 'foo', 'bar'
+        ignoreAssetsPattern "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
+    }
+
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+}
+
+dependencies {
+
+    // Core
+    //implementation library.kotlin
+    implementation library.core
+    implementation library.activity
+    implementation library.fragment
+    //AAC
+    implementation library.livedata
+    implementation library.viewmodel
+    implementation library.runtime
+    implementation library.navigation_ui
+    implementation library.navigation_fragment
+    // Coroutines
+    implementation library.coroutines_core
+    implementation library.coroutines_android
+    // UI
+    implementation library.appcompat
+    implementation library.material
+    implementation library.legacy
+    implementation library.constraintlayout
+    implementation library.recyclerview
+    implementation library.recyclerview_selection
+    implementation library.animatedbottombar // 底部导航栏
+    //implementation library.StatusBar
+    implementation library.UltimateBarX // 状态栏
+//    implementation library.SmartRefreshLayout_layout // 下拉刷新核心
+//    implementation library.SmartRefreshLayout_classics_header // 经典下拉刷新头
+    implementation  'io.github.scwang90:refresh-header-classics:2.0.5'    //经典刷新头
+//    implementation library.SmartRefreshLayout_classics_footer // 经典加载更多
+    implementation library.lottie // lottie 动效
+    implementation library.MultiStatePage // 多状态布局
+    implementation library.ShadowLayout // 阴影布局
+    implementation library.BaseRecyclerViewAdapterHelper // Rv适配器框架
+    implementation 'com.github.liangjingkanji:BRV:1.3.52'
+    implementation library.AgentWeb // 浏览器
+    implementation library.flexbox // flex布局
+    implementation 'com.github.zhpanvip:bannerviewpager:3.5.5' // 轮播图
+    implementation 'com.github.virtualvivek:BlurShadowImageView:4.0' // 阴影图片
+    implementation "com.github.kongzue.DialogX:DialogX:0.0.44.beta14"
+    implementation 'com.github.azhon:AppUpdate:3.0.6' // 应用更新
+    implementation 'com.github.vitaviva.fragivity:core:0.3.1'
+    implementation 'com.github.Spikeysanju:MotionToast:1.4' // 吐司弹窗
+    implementation 'com.github.getActivity:XXPermissions:13.5'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.github.liujingxing.rxhttp:rxhttp:2.8.2'
+    // ksp/kapt/annotationProcessor 选其一
+    kapt 'com.github.liujingxing.rxhttp:rxhttp-compiler:2.8.2'
+
+    //导入SDK相关依赖jar、aar
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    implementation 'com.squareup.okio:okio:1.8.0'
+    implementation 'com.alibaba:fastjson:1.2.66'
+    implementation 'com.facebook.fresco:fresco:2.5.0'
+    implementation 'com.facebook.fresco:animated-gif:2.5.0'
+    implementation 'com.facebook.fresco:webpsupport:2.5.0'
+    implementation 'com.facebook.fresco:animated-webp:2.5.0'
+
+    //util
+    implementation library.glide // 图片加载框架
+
+//    // 核心库
+//    implementation "com.immomo.mlncore:core:1.0.1"
+//    // view、工具桥接库
+//    implementation "com.immomo.mls:mln:1.0.1"
+//    // 代码生成库
+//    kapt "com.immomo.mls:processor:1.0.0"
+    //    // 热重载，配合IDEA插件使用
+//    debugImplementation "com.immomo.luanative:hotreload:1.0.1"
+//    releaseImplementation "com.immomo.luanative:hotreload_empty:1.0.1"
+//    // 配合热重载使用
+//    debugImplementation "com.google.protobuf:protobuf-lite:3.0.1"
+
+//    implementation 'com.airbnb.android:mavericks:2.5.1'
+
+    // Tests
+    androidTestImplementation androidTestLibrary.junit
+    androidTestImplementation androidTestLibrary.junit_ext
+    androidTestImplementation androidTestLibrary.espresso_core
+
+}
