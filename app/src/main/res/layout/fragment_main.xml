@@ -32,7 +32,7 @@
         android:id="@+id/home_nav"
         android:background="?android:attr/windowBackground"
         app:abb_textStyle="bold"
-        app:abb_tabs="@menu/bottom_nav_menu"
+        app:abb_tabs="@menu/main_nav_bottom_menu"
         app:abb_selectedTabType="text"
         app:abb_indicatorAppearance="round"
         app:abb_indicatorLocation="bottom"

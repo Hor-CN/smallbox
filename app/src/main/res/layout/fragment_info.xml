@@ -65,23 +65,14 @@
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.lihang.ShadowLayout
-            android:id="@+id/mShadowLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/white"
-            android:paddingStart="15dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="15dp"
-            app:hl_cornerRadius_leftTop="10dp"
-            app:hl_cornerRadius_rightTop="10dp"
-            app:hl_shadowHidden="true"
-            app:hl_shadowHiddenBottom="true">
-
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="15dp"
+                android:background="@drawable/shape_corner_up"
+                >
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/info_rv"
@@ -214,20 +205,7 @@
             </RelativeLayout>
 
 
-        </com.lihang.ShadowLayout>
-
-
     </androidx.core.widget.NestedScrollView>
 
-    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-    <!--        android:id="@+id/fab"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginEnd="30dp"-->
-    <!--        android:contentDescription="@string/run"-->
-    <!--        android:src="@drawable/ic_run"-->
-    <!--        app:fabSize="auto"-->
-    <!--        app:layout_anchor="@id/app_bar_layout"-->
-    <!--        app:layout_anchorGravity="bottom|end" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

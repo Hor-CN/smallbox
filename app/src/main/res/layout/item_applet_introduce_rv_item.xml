@@ -5,7 +5,7 @@
     android:layout_width="200dp"
     android:layout_height="300dp"
     android:background="@drawable/shape_applet_iv_bg"
-    android:layout_margin="@dimen/dp_10"
+    android:layout_margin="10dp"
     >
 
 

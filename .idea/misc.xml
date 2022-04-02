@@ -11,6 +11,7 @@
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_author.xml" value="0.13518518518518519" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_back.xml" value="0.13796296296296295" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_classify.xml" value="0.2015625" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_collection.xml" value="0.1398148148148148" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_create_applet.xml" value="0.15833333333333333" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_delete.xml" value="0.13333333333333333" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_edit.xml" value="0.14074074074074075" />
@@ -22,6 +23,8 @@
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15729166666666666" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_me_select.xml" value="0.1" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_me_unselect.xml" value="0.1" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_nav_find.xml" value="0.1398148148148148" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_nav_store.xml" value="0.1398148148148148" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_open_delete.xml" value="0.15462962962962962" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_password.xml" value="0.13518518518518519" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/ic_search.xml" value="0.1" />
@@ -50,6 +53,7 @@
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_applet_iv_bg.xml" value="0.1527777777777778" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_bottom_border.xml" value="0.8" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_button_bg.xml" value="0.13518518518518519" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_corner.xml" value="0.2041025641025641" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_corner_up.xml" value="0.264" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_me_bg.xml" value="0.10925925925925926" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/drawable/shape_search_input.xml" value="0.13796296296296295" />
@@ -72,7 +76,7 @@
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_applet_introduce_banner_item.xml" value="0.17291666666666666" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_applet_introduce_rv_item.xml" value="0.2" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_head_title.xml" value="0.536" />
-        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_home_applet.xml" value="0.4" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_home_applet.xml" value="0.2222222222222222" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_menu_rv.xml" value="0.10552536231884058" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_rv_menu.xml" value="0.264" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_store_banner.xml" value="0.11005434782608696" />
@@ -82,11 +86,18 @@
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/item_storelist_content.xml" value="0.2" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/layout_bottom_create_applet.xml" value="0.264" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/mult_state_loading.xml" value="0.1765625" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/sotre_fragment.xml" value="0.19114583333333332" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/splashview.xml" value="0.176" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/state_empty.xml" value="0.264" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/state_error.xml" value="0.264" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/state_loading.xml" value="0.136" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/store_fragment.xml" value="0.152" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/store_recycle_content.xml" value="0.19114583333333332" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/store_recycle_content_item1.xml" value="0.3108974358974359" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/store_recycle_content_item2.xml" value="0.19166666666666668" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/store_recycle_item_content.xml" value="0.22453703703703703" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/view_label.xml" value="0.19583333333333333" />
-        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/view_navigationbar.xml" value="0.11548913043478261" />
+        <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/layout/view_navigationbar.xml" value="0.4" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14114583333333333" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/menu/bottom_navigation.xml" value="0.14114583333333333" />
         <entry key="..\:/Application/AndroidStudio/AndroidProject/SmallBox/app/src/main/res/menu/home_menu.xml" value="0.21041666666666667" />

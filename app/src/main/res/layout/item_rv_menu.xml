@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_rv_menu_ll"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="m"
+            type="cn.itbk.smallbox.model.store.GridMenuItem" />
+    </data>
+    
 
-    <ImageView
-        android:id="@+id/item_rv_menu_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8.0dip"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="fitCenter" />
-
-    <TextView
-        android:id="@+id/item_rv_menu_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/item_rv_menu_ll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:alpha="1.0"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:text="精选"
-        android:textColor="@color/black"
-      />
+        android:orientation="vertical">
 
-</LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8.0dip"
+            android:adjustViewBounds="true"
+            app:imageUrl="@{m.img}"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:alpha="1.0"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{m.text}"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</layout>

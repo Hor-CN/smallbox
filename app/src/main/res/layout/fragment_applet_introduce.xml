@@ -10,7 +10,7 @@
         android:id="@+id/fragment_applet_introduce_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="5dp"
         tools:ignore="MissingConstraints" />
 
 
@@ -18,7 +18,7 @@
         android:id="@+id/fragment_applet_introduce_mt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginTop="10dp"
         android:drawableStart="@drawable/ic_yinhao_left"
         android:drawableEnd="@drawable/ic_yinhao_right"
         android:text="Hello World"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_applet_introduce_gybb"
-            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"

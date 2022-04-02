@@ -17,9 +17,7 @@
 
     <string name="default_user_name">无名氏</string>
     <string name="default_introduce">您还没有个性签名！</string>
-
-
-
+    <string name="ImportApplet">导入小程序</string>
     <string name="cancel">取消</string>
     <string name="user_name">用户名</string>
     <string name="password">密码</string>
@@ -36,11 +34,6 @@
     <string name="delete">删除</string>
     <string name="delete_all">删除全部</string>
     <string name="go">Go!</string>
-    <string name="UnknownHostException">当前无网络，请检查你的网络设置</string>
-    <string name="TimeoutException">连接超时,请稍后再试</string>
-    <string name="ConnectException">网络不给力，请稍候重试！</string>
-    <string name="HttpStatusCodeException">Http状态码异常</string>
-    <string name="JsonSyntaxException">数据解析失败,请检查数据是否正确</string>
     <string name="error_msg">哦豁，发生了错误！</string>
     <string name="open">打开</string>
 </resources>

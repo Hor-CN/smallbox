@@ -32,9 +32,9 @@
                     android:id="@+id/fragment_applet_iv"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginStart="15dp"
                     android:layout_marginTop="@dimen/dp_10"
-                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginEnd="15dp"
                     android:layout_marginBottom="20dp"
                     android:src="@drawable/ic_launcher_background"
                     app:shapeAppearance="@style/roundedCornerStyle" />
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fragment_applet_name"
                     android:layout_alignStart="@+id/fragment_applet_name"
-                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginTop="5dp"
                     android:text="免费" />
 
                 <TextView
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fragment_applet_price"
                     android:layout_alignStart="@+id/fragment_applet_price"
-                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginTop="5dp"
                     android:text="人工复检 · Hor" />
 
 
@@ -74,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginEnd="15dp"
                     android:text="打开" />
 
                 <com.google.android.flexbox.FlexboxLayout
@@ -98,10 +98,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginEnd="@dimen/dp_5"
+                            android:layout_marginEnd="5dp"
                             android:text="3.5"
-                            android:visibility="gone"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"
+                            android:visibility="gone" />
 
                         <RatingBar
                             android:id="@+id/fragment_applet_ratingBar"

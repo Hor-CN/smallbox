@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="m"
+            type="cn.itbk.smallbox.model.applet.AppletModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/store_rv_content_item2_item"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/store_rv_content_item2_IV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:imageUrl="@{m.appIcon}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/circleStyle"
+            app:strokeWidth="1dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/store_rv_content_item2_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@+id/store_rv_content_item2_IV"
+            app:layout_constraintTop_toTopOf="@+id/store_rv_content_item2_IV"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{m.name}"
+            android:textColor="#37383A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap"
+            tools:text="Hello World" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/store_rv_content_item2_Name"
+            app:layout_constraintTop_toBottomOf="@+id/store_rv_content_item2_Name"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:text="@{m.description}"
+            tools:text="插件简介插件简介插件简介插件简介插件简介插件简介插件简介插件简介插件简介插件简介插件简介插件简介" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/item_home_applet_open"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#F1F0F0"
+            android:text="@string/open"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/rippleColor" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
