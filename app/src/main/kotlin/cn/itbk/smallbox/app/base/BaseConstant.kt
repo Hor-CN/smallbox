@@ -11,16 +11,18 @@ import rxhttp.wrapper.annotation.DefaultDomain
 object BaseConstant {
     // 接口配置
     @DefaultDomain //设置为默认域名
-//    const val HOST = "http://10.0.2.2:8080/api"
+//      const val HOST = "http://10.0.2.2:8080/api"
     const val HOST = "https://smallbox.itbk.cn/api"
-
+    //  http://smallbox.itbk.cn/api/appUpdate
     const val appUpdateUrl = "/appUpdate"
     const val store_index = "/index"
-    const val login = "/user/login"
+    const val login = "/login"
+    const val THIRD_LOGIN = "/third/login"
     const val user = "/user/info"
 
     // 文件
     const val manifest = "manifest.json"
+    const val WGT = ".wgt"
 
     // 用户文件
     const val TAG_TOKEN = "tag_user_token"

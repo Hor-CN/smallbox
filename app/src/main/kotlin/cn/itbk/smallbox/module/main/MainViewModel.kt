@@ -1,12 +1,12 @@
 package cn.itbk.smallbox.module.main
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import cn.itbk.smallbox.app.base.SingleLiveEvents
-import cn.itbk.smallbox.app.base.asLiveData
-import cn.itbk.smallbox.app.base.msg
-import cn.itbk.smallbox.app.base.setEvent
+import cn.itbk.smallbox.app.base.*
+import cn.itbk.smallbox.manager.AccountManager
+import com.kongzue.dialogx.dialogs.PopTip
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -37,9 +37,7 @@ class MainViewModel : ViewModel() {
             is MainViewAction.TabsAt -> _viewEvents.setEvent(MainViewEvent.TabsAt(viewAction.tabAt))
             // 状态栏
             is MainViewAction.StateToolbar -> _viewEvents.setEvent(
-                MainViewEvent.StateToolbar(
-                    viewAction.state
-                )
+                MainViewEvent.StateToolbar(viewAction.state)
             )
             // 提示弹窗
             is MainViewAction.MotionToast -> motionToast(
@@ -48,7 +46,7 @@ class MainViewModel : ViewModel() {
                 viewAction.message
             )
             // 解压小程序
-            is MainViewAction.UnWgt -> _viewEvents.setEvent(MainViewEvent.UnWgt(viewAction.name,viewAction.filePath))
+            is MainViewAction.UnWgt -> _viewEvents.setEvent(MainViewEvent.UnWgt(viewAction.name,viewAction.filePath, viewAction.is_run))
             // 打开小程序
             is MainViewAction.OpenApplet -> _viewEvents.setEvent(MainViewEvent.OpenApplet(viewAction.appId))
 
@@ -59,6 +57,10 @@ class MainViewModel : ViewModel() {
     private fun motionToast(motionToastStyle: MotionToastStyle, title: String, msg: String) {
         _viewEvents.setEvent(MainViewEvent.MotionToast(motionToastStyle, title, msg))
     }
+
+
+
+
 
     // 应用更新
     private fun appUpdate() {

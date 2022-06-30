@@ -8,12 +8,8 @@ import cn.itbk.smallbox.app.base.SingleLiveEvents
 import cn.itbk.smallbox.app.base.asLiveData
 import cn.itbk.smallbox.app.base.msg
 import cn.itbk.smallbox.app.base.setEvent
-import cn.itbk.smallbox.module.main.home.HomeViewAction
-import cn.itbk.smallbox.module.main.me.MeViewEvent
-import io.dcloud.feature.sdk.DCUniMPSDK
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 /**

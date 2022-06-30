@@ -4,11 +4,7 @@ import android.util.Log
 import cn.itbk.smallbox.app.base.BaseConstant
 import cn.itbk.smallbox.model.user.User
 import cn.itbk.smallbox.utils.Utils
-import io.dcloud.common.util.Md5Utils
-import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flatMapConcat
-import rxhttp.toFlow
 import rxhttp.wrapper.param.RxHttp
 import rxhttp.wrapper.param.toFlowResponse
 
@@ -29,5 +25,12 @@ object MeRepository {
             .toFlowResponse()
     }
 
+    fun qqLogin(access_token: String): Flow<User> {
+        Log.d("登录", "login: $access_token")
+        return RxHttp.postJson(BaseConstant.THIRD_LOGIN)
+            .add("login_type","qq")
+            .add("access_token",access_token)
+            .toFlowResponse()
+    }
 
 }

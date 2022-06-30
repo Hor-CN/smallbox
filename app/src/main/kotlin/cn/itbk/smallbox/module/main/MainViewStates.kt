@@ -34,7 +34,7 @@ sealed class MainViewEvent {
     data class StateToolbar(val state: Boolean) : MainViewEvent()
     data class MotionToast(val motionToastStyle: MotionToastStyle,val title: String, val message: String) : MainViewEvent()
     data class OpenApplet(val appId: String): MainViewEvent()
-    data class UnWgt(val name: String, val filePath:String): MainViewEvent()
+    data class UnWgt(val name: String, val filePath:String, val is_run: Boolean): MainViewEvent()
 }
 
 sealed class MainViewAction {
@@ -43,5 +43,5 @@ sealed class MainViewAction {
     class StateToolbar(val state: Boolean) : MainViewAction()
     class MotionToast(val motionToastStyle: MotionToastStyle,val title: String,val message: String) :  MainViewAction()
     data class OpenApplet(val appId: String): MainViewAction()
-    data class UnWgt(val name: String, val filePath:String): MainViewAction()
+    data class UnWgt(val name: String, val filePath:String, val is_run: Boolean): MainViewAction()
 }

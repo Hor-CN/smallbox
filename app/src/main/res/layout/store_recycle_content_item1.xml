@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="@{m.author.nickName}"
+                    android:text="@{m.author.nikeName}"
                     tools:text="Hor"
                     android:textColor="@color/black"
                     android:textSize="14sp"

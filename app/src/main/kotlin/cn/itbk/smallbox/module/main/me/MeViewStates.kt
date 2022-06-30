@@ -23,5 +23,5 @@ sealed class MeViewEvent {
 sealed class MeViewAction {
     object CurrentUser : MeViewAction()
     data class Login(val username: String, val password: String) : MeViewAction()
-
+    data class QQLogin(val access_token: String) : MeViewAction()
 }

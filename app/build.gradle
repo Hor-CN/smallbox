@@ -16,11 +16,13 @@ android {
         applicationId "cn.itbk.smallbox"
         minSdk versions.minSdk
         targetSdk versions.targetSdk
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 8
+        versionName "1.0.8"
         manifestPlaceholders = mfph
         ndk {
             abiFilters 'x86', "armeabi-v7a"
+//            abiFilters "armeabi-v8a"
+
         }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -102,12 +104,12 @@ dependencies {
     implementation library.flexbox // flex布局
     implementation 'com.github.zhpanvip:bannerviewpager:3.5.5' // 轮播图
     implementation 'com.github.virtualvivek:BlurShadowImageView:4.0' // 阴影图片
-
+    //
     implementation "com.github.kongzue.DialogX:DialogX:0.0.44.beta18"
     //文件选择对话框
     implementation 'com.github.kongzue.DialogXSample:FileDialog:0.0.1.alpha13'
 
-    implementation 'com.github.azhon:AppUpdate:3.0.6' // 应用更新
+    implementation 'com.github.azhon:AppUpdate:3.0.7' // 应用更新
     implementation 'com.github.vitaviva.fragivity:core:0.3.1'
     implementation 'com.github.Spikeysanju:MotionToast:1.4' // 吐司弹窗
     implementation 'com.github.getActivity:XXPermissions:13.5'
@@ -123,6 +125,7 @@ dependencies {
 
     //导入SDK相关依赖jar、aar
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //
     implementation fileTree(include: ['*.aar'], dir: 'libs')
     implementation 'com.squareup.okio:okio:1.8.0'
     implementation 'com.alibaba:fastjson:1.2.66'

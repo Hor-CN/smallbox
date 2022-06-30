@@ -122,6 +122,14 @@ class StoreFragment : Fragment(R.layout.store_fragment) {
                                     applySlideInOut()
                                 }
                             }
+                            onClick(R.id.store_rv_content_item2_open) {
+                                navigator.push(AppletFragment::class) {
+                                    arguments = bundleOf(
+                                        "data" to getModel<AppletModel>()
+                                    )
+                                    applySlideInOut()
+                                }
+                            }
                         }
                     }
                 }
@@ -147,12 +155,6 @@ class StoreFragment : Fragment(R.layout.store_fragment) {
     }
 
     private fun setEvents() {
-        //下拉刷新
-//        binding.fragmentStoreSrl.setOnRefreshListener {
-//            viewModel.dispatch(StoreViewAction.LoadApplets)
-//            binding.fragmentStoreSrl.finishRefresh(true)
-//        }
-
         binding.fragmentStoreToolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.action_search) {
                 navigator.push(SearchFragment::class) {

@@ -1,7 +1,9 @@
 package cn.itbk.smallbox.module.main
 
+import android.util.Log
 import cn.itbk.smallbox.app.base.BaseConstant
 import cn.itbk.smallbox.model.AppUpdateModel
+import cn.itbk.smallbox.model.user.User
 import kotlinx.coroutines.flow.Flow
 import rxhttp.wrapper.param.RxHttp
 import rxhttp.wrapper.param.toFlowResponse
@@ -20,6 +22,9 @@ object MainRepository {
                   .connectTimeout(3000)
                 .toFlowResponse()
     }
+
+
+
 
 
 }

@@ -2,6 +2,7 @@ package cn.itbk.smallbox.module.main
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
@@ -19,6 +20,7 @@ import cn.itbk.smallbox.views.UniAppSplashView
 import com.azhon.appupdate.config.UpdateConfiguration
 import com.azhon.appupdate.manager.DownloadManager
 import com.github.fragivity.finish
+import com.kongzue.dialogx.dialogs.PopTip
 import com.zackratos.ultimatebarx.ultimatebarx.statusBar
 import io.dcloud.feature.sdk.DCUniMPSDK
 import io.dcloud.feature.sdk.Interface.IUniMP
@@ -81,7 +83,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     it.motionToastStyle,
                     it.message,
                 )
-                is MainViewEvent.UnWgt -> unWgt(it.name, it.filePath)
+                is MainViewEvent.UnWgt -> unWgt(it.name, it.filePath,it.is_run)
                 is MainViewEvent.OpenApplet -> openApplet(it.appId)
             }
         }
@@ -110,18 +112,23 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 //        }
     }
 
-    private fun unWgt(name: String, filePath: String) {
+    private fun unWgt(name: String, filePath: String,is_run: Boolean) {
+        Log.d("小程序:", "解压名称:${name},路径${filePath}")
         val un = UniMPReleaseConfiguration()
         un.wgtPath = filePath
         un.password = ""
         DCUniMPSDK.getInstance().releaseWgtToRunPath(name, un) { i, _ ->
             if (i == 1) {
-                motionToast(
-                    title = "导入成功",
-                    motionToastStyle = MotionToastStyle.SUCCESS,
-                    message = "${name}拓展导入成功!"
-                )
                 homeViewModel.dispatch(HomeViewAction.LoadApplets)
+                if (is_run) {
+                    openApplet(name)
+                }else {
+                    motionToast(
+                        title = "导入成功",
+                        motionToastStyle = MotionToastStyle.SUCCESS,
+                        message = "${name}拓展导入成功!"
+                    )
+                }
             }else{
                 motionToast(
                     title = "导入失败",
@@ -143,6 +150,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun appUpdate(it: AppUpdateModel) {
+
         val configuration = UpdateConfiguration()
             .setEnableLog(true) //输出错误日志
             //.setHttpManager() 设置自定义的下载
@@ -153,18 +161,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             .setDialogButtonTextColor(Color.WHITE) //设置按钮的文字颜色
             .setShowNotification(true)//设置是否显示通知栏进度
             .setShowBgdToast(false)//设置是否提示后台下载toast
-            .setForcedUpgrade(it.forcedUpgrade) //设置强制更新
+            .setForcedUpgrade(it.forcedupgrade) //设置强制更新
 
         DownloadManager.getInstance(activity)
-            .setApkName(it.apkName)
-            .setApkUrl(it.apkUrl)
+            .setApkName(it.apkname)
+            .setApkUrl(it.apkurl)
             .setSmallIcon(R.mipmap.ic_launcher)
             .setConfiguration(configuration)
             .setShowNewerToast(true)
-            .setApkVersionCode(it.apkVersionCode)
-            .setApkVersionName(it.apkVersionName)
-            .setApkSize(it.apkSize.toString())
-            .setApkDescription(it.apkDescription)
+            .setApkVersionCode(it.apkversioncode)
+            .setApkVersionName(it.apkversionname)
+            .setApkSize(it.apksize.toString())
+            .setApkDescription(it.apkdescription)
             .download()
     }
 

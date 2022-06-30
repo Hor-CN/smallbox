@@ -1,9 +1,11 @@
 package cn.itbk.smallbox.module.main
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import cn.itbk.smallbox.app.base.BaseActivity
 import cn.itbk.smallbox.databinding.ActivityMainBinding
+import cn.itbk.smallbox.module.main.me.MeViewModel
 import com.github.fragivity.loadRoot
 import com.zackratos.ultimatebarx.ultimatebarx.statusBarOnly
 
@@ -16,6 +18,7 @@ import com.zackratos.ultimatebarx.ultimatebarx.statusBarOnly
  */
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 //    private val viewModel: MainViewModel by viewModels()
+    private val meViewModel : MeViewModel by viewModels()
     override fun initViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {

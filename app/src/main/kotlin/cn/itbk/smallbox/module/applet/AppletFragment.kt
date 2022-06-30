@@ -92,7 +92,7 @@ class AppletFragment : Fragment(R.layout.fragment_applet) {
 
         binding.fragmentAppletOpen.setOnClickListener {
             if (DCUniMPSDK.getInstance().isExistsApp(data.appId)) {
-                runApplet(data.appId)
+                mainViewModel.dispatch(MainViewAction.OpenApplet(data.appId))
             } else {
                 viewModel.dispatch(AppletViewAction.DownApplet(data.appId, data.downloadUrl))
             }
@@ -122,24 +122,25 @@ class AppletFragment : Fragment(R.layout.fragment_applet) {
 
     }
 
-    private fun runApplet(appId: String) {
-        mainViewModel.dispatch(MainViewAction.OpenApplet(appId))
-    }
+//    private fun runApplet(appId: String) {
+//        mainViewModel.dispatch(MainViewAction.OpenApplet(appId))
+//    }
 
     private fun observeViewModel() {
         viewModel.viewEvents.observeEvent(viewLifecycleOwner) {
             when (it) {
                 is AppletViewEvent.RunApplet -> {
-                    val un = UniMPReleaseConfiguration()
-                    un.wgtPath = it.downUrl
-                    un.password = ""
-                    DCUniMPSDK.getInstance().releaseWgtToRunPath(it.appId, un) { i, _ ->
-                        if (i == 1) {
-                            runApplet(it.appId)
-                        } else {
-                            Log.d("TAG", "observeViewModel: 解压失败")
-                        }
-                    }
+//                    val un = UniMPReleaseConfiguration()
+//                    un.wgtPath = it.downUrl
+//                    un.password = ""
+//                    DCUniMPSDK.getInstance().releaseWgtToRunPath(it.appId, un) { i, _ ->
+//                        if (i == 1) {
+//                            runApplet(it.appId)
+//                        } else {
+//                            Log.d("TAG", "observeViewModel: 解压失败")
+//                        }
+//                    }
+                    mainViewModel.dispatch(MainViewAction.UnWgt(it.appId,it.downUrl,true))
                 }
             }
         }

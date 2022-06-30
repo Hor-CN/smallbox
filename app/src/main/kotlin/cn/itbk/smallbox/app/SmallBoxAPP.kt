@@ -7,6 +7,7 @@ import cn.itbk.smallbox.app.base.BaseApplication
 import cn.itbk.smallbox.manager.AccountManager
 import com.drake.brv.utils.BRV
 import com.kongzue.dialogx.DialogX
+import com.tencent.tauth.Tencent
 import io.dcloud.common.util.RuningAcitvityUtil
 import io.dcloud.feature.sdk.DCSDKInitConfig
 import io.dcloud.feature.sdk.DCUniMPSDK
@@ -29,14 +30,19 @@ class SmallBoxAPP : BaseApplication() {
     companion object {
         var instance: Application? = null
             private set
+
+        lateinit var mTencent : Tencent
+            private set
     }
 
     override fun init() {
         instance = this
+        mTencent = Tencent.createInstance("101934112", this, "cn.itbk.smallbox.dc.fileprovider");
         AccountManager.init(applicationContext)
         if (!RuningAcitvityUtil.getAppName(this).contains("io.dcloud.unimp")) {
             // 初始化弹窗
             DialogX.init(this)
+
             BRV.modelId = BR.m
             //设置读、写、连接超时时间为15s
             val client: OkHttpClient = OkHttpClient.Builder()

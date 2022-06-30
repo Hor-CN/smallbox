@@ -1,13 +1,14 @@
 package cn.itbk.smallbox.module.main.me
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import cn.itbk.smallbox.app.base.*
 import cn.itbk.smallbox.app.state.PageState
 import cn.itbk.smallbox.manager.AccountManager
+import cn.itbk.smallbox.module.main.MainRepository
 import com.kongzue.dialogx.dialogs.PopTip
-import io.dcloud.common.util.Md5Utils
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -31,8 +32,11 @@ class MeViewModel : ViewModel() {
 
     fun dispatch(viewAction: MeViewAction) {
         when (viewAction) {
+            // 获取当前登录用户信息
             is MeViewAction.CurrentUser -> getCurrentUser()
+            // 登录Login
             is MeViewAction.Login -> login(viewAction.username,viewAction.password)
+//            is MeViewAction.QQLogin -> qqLogin(viewAction.access_token)
         }
     }
 
@@ -40,7 +44,8 @@ class MeViewModel : ViewModel() {
         viewModelScope.launch {
             if (AccountManager.isLogin) {
                 _viewStates.setState {
-                    copy(User = AccountManager.accountInfo, pageState = PageState.Success)
+                    // 登录成功
+                    copy(pageState = PageState.Success)
                 }
             } else {
                 _viewStates.setState {
@@ -65,5 +70,23 @@ class MeViewModel : ViewModel() {
             }
         }
     }
+
+    private fun qqLogin(access_token: String) {
+        Log.d("登录login", "qqLogin: $access_token")
+        viewModelScope.launch {
+            MeRepository.qqLogin(access_token).catch {
+                PopTip.show(it.msg)
+            }.collect {
+                Log.d("登录", "qqLogin: $it")
+                AccountManager.signIn(it)
+                //  _viewEvents.setEvent(MeViewEvent.DismissDialog)
+                _viewStates.setState {
+                    copy(User = AccountManager.accountInfo)
+                }
+            }
+        }
+    }
+
+
 
 }

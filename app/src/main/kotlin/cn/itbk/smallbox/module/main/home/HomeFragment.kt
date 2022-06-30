@@ -3,11 +3,11 @@ package cn.itbk.smallbox.module.main.home
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import androidx.activity.result.ActivityResultLauncher
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import cn.itbk.smallbox.R
+import cn.itbk.smallbox.app.base.BaseConstant
 import cn.itbk.smallbox.app.base.observeState
 import cn.itbk.smallbox.app.base.viewBinding
 import cn.itbk.smallbox.app.state.EmptyState
@@ -19,7 +19,6 @@ import cn.itbk.smallbox.model.applet.AppletConfigModel
 import cn.itbk.smallbox.module.info.InfoFragment
 import cn.itbk.smallbox.module.main.MainViewAction
 import cn.itbk.smallbox.module.main.MainViewModel
-import cn.itbk.smallbox.utils.PickUtils
 import cn.itbk.smallbox.views.RvItemDecoration
 import com.drake.brv.utils.linear
 import com.drake.brv.utils.setDifferModels
@@ -52,18 +51,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val viewModel: HomeViewModel by activityViewModels()
     private val mainViewModel: MainViewModel by activityViewModels()
     private val binding: FragmentHomeBinding by viewBinding()
-    private val launcher: ActivityResultLauncher<Boolean> =
-        registerForActivityResult(ResultContract()) {
-            if (it == null) {
-                return@registerForActivityResult
-            }
-            val name = PickUtils.getFileName(requireContext(), it.data)
-            val filepath = PickUtils.getPath(requireContext(), it.data)
-            if (File(filepath).extension == "wgt") {
-                mainViewModel.dispatch(MainViewAction.UnWgt(name,filepath))
-            }
-        }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -97,12 +84,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     private fun setEvents() {
-        //下拉刷新
-//        binding.fragmentHomeSrl.setOnRefreshListener {
-//            viewModel.dispatch(HomeViewAction.OnRefresh)
-//            binding.fragmentHomeSrl.finishRefresh(true)
-//        }
-
         // 创建拓展
         binding.fragmentHomeToolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.action_create_applet) {
@@ -136,16 +117,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     })
                     .onMenuItemClickListener =
                     OnMenuItemClickListener { _, _, _ ->
-//                        launcher.launch(true)
-
-                        FileDialog.build().setSuffixArray(arrayOf(".wgt")) //只允许 jpg 后缀
+                        FileDialog.build().setSuffixArray(arrayOf(BaseConstant.WGT)) //只允许 wgt 后缀
                             .selectFile(object : FileSelectCallBack() {
                                 override fun onSelect(file: File, filePath: String) {
-                                    mainViewModel.dispatch(MainViewAction.UnWgt(file.name,filePath))
+                                    mainViewModel.dispatch(MainViewAction.UnWgt(file.nameWithoutExtension,filePath,false))
                                 }
                             })
-
-
                         false
                     }
             }
@@ -220,6 +197,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 false
             }
     }
-
 
 }

@@ -8,17 +8,22 @@ package cn.itbk.smallbox.model.user
  */
 data class User(
     var userId: Long, // 用户ID
-    var avatar: String, // 图像
-    var email: String, // 电子邮箱
-    var loginName: String, // 用户名
-    var nickName: String, // 昵称
+    var avatarImg: String, // 图像
+    var nikeName: String, // 昵称
     var introduce: String, // 个性介绍
-//    var sex: Int, // 性别
-    var developerFlag: Int, // 账号状态
-    var createTime: String, // 创建时间
-//    var updateTime: String, // 更新时间
+    var developer: Boolean, //是否是开发者
+    var createTime: Long, // 创建时间
     var tokenInfo: TokenInfo // 信息
 )
+//data class User(
+//    var avatarImg: String,
+//    var createTime: Long,
+//    var developer: Boolean,
+//    var introduce: String,
+//    var nikeName: String,
+//    var tokenInfo: TokenInfo,
+//    var userId: Int
+//)
 
 data class TokenInfo(
     var isLogin: Boolean,

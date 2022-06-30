@@ -62,7 +62,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/item_home_applet_open"
+            android:id="@+id/store_rv_content_item2_open"
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
